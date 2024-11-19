@@ -1,33 +1,17 @@
 ﻿namespace Snake_Console;
 
-public class BaseGameLogic: IArrowListener
+public abstract class BaseGameLogic: IArrowListener
 {
     public void InitializeInput(ConsoleInput input)
     {
         input.Subscribe(this);
     }
 
-    public void Update(float deltaTime)
-    {
-        
-    }
-    public void OnArrowUp()
-    {
-        throw new NotImplementedException();
-    }
+    public abstract void Update(float deltaTime);
 
-    public void OnArrowDown()
-    {
-        throw new NotImplementedException();
-    }
+    public abstract void OnArrowUp();
+    public abstract void OnArrowDown();
+    public abstract void OnArrowLeft();
+    public abstract void OnArrowRight();
 
-    public void OnArrowLeft()
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnArrowRight()
-    {
-        throw new NotImplementedException();
-    }
 }

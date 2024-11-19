@@ -9,19 +9,20 @@ public class SnakeGameplayState: BaseGameState
     public override void Update(float deltaTime)
     {
         _timeToMove -= deltaTime;
-        if (_timeToMove <= 0)
-        {
-            return;
-        }
-        else
-        {
-            _timeToMove = 1f / 5f;
-        }
-        
+        if (_timeToMove > 0) return;
+
+        // Скорость змейки: одна клетка каждую секунду
+        _timeToMove = 1f / 1f;
+
+        // Перемещение головы змейки
         Cell head = _bodyList[0];
-        Cell nextCell = ShiftTo(head, SnakeDir.Right);
-        nextCell = Cell.Zero;
-        Console.WriteLine(_bodyList[0].ToString());
+        Cell nextCell = ShiftTo(head, _currentDir);
+
+        // Перемещение тела змейки
+        _bodyList.RemoveAt(_bodyList.Count - 1);
+        _bodyList.Insert(0, nextCell);
+
+        Console.WriteLine($"Snake coord X = {_bodyList[0].X}, Y = {_bodyList[0].Y}");
     }
 
     public override void Reset()
@@ -32,7 +33,7 @@ public class SnakeGameplayState: BaseGameState
         _timeToMove = 0; 
     }
 
-    private void SetDirection(SnakeDir dir)
+    public void SetDirection(SnakeDir dir)
     {
         _currentDir = dir;
     }
@@ -42,21 +43,19 @@ public class SnakeGameplayState: BaseGameState
         switch (direction)
         {
             case SnakeDir.Right:
-                return Cell.Right;
+                return from + Cell.Right;
             break;
             case SnakeDir.Left:
-                return Cell.Left;
+                return from + Cell.Left;
             break;
             case SnakeDir.Down:
-                return Cell.Down;
+                return from + Cell.Down;
             break;
             case SnakeDir.Up:
-                return Cell.Up;
+                return from + Cell.Up;
             break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(direction), direction, null);
         }
     }
-    
-    
 }

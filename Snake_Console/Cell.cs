@@ -16,4 +16,11 @@ public struct Cell
         X = x;
         Y = y;
     }
+
+    public static Cell operator +(Cell left, Cell right)
+    {
+        return new Cell(left.X + right.X, left.Y + right.Y);
+    }
+    
+    
 }

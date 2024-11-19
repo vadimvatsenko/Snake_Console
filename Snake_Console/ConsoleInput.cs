@@ -18,6 +18,7 @@ public class ConsoleInput
         {
             ConsoleKeyInfo key = Console.ReadKey();
 
+            
             // Перебирает всех подписчиков в _arrowListeners и вызывает соответствующий метод
             switch (key.Key)
             {
