@@ -1,0 +1,20 @@
+﻿@startuml
+
+class Program
+{
+    + static void Main(string[] args) 
+    --
+    - gameLogic :  SnakeGameLogic new()
+    - consoleInput : ConsoleInput new()
+    - lastFrameTime : DateTime.Now
+    --
+    - while (true)
+      - consoleInput.Update()
+      - frameStartTime : DateTime.Now
+      - deltaTime : float 
+      - gameLogic.Update(deltaTime)
+      - lastFrameTime = frameStartTime;     
+    endwhile
+    
+}
+@enduml

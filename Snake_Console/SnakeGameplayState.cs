@@ -34,11 +34,8 @@ public class SnakeGameplayState: BaseGameState
         _timeToMove = 0; 
     }
 
-    public void SetDirection(SnakeDir dir)
-    {
-        _currentDir = dir;
-    }
-
+    public void SetDirection(SnakeDir dir) => _currentDir = dir;
+    
     private Cell ShiftTo(Cell from, SnakeDir direction)
     {
         switch (direction)

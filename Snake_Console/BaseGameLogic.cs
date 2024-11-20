@@ -6,7 +6,6 @@ public abstract class BaseGameLogic: IArrowListener
     {
         input.Subscribe(this);
     }
-
     public abstract void Update(float deltaTime);
 
     public abstract void OnArrowUp();

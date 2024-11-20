@@ -8,19 +8,17 @@ class Program
         ConsoleInput consoleInput = new ConsoleInput();
         gameLogic.InitializeInput(consoleInput);
         
-        var lastFrameTime = DateTime.Now;
-        gameLogic.GotoGamePlay();
+        DateTime lastFrameTime = DateTime.Now;
+        gameLogic.GotoGamePlay(); // сброс в первоначальное состояние
 
         while (true)
         {
-            consoleInput.Update();
-            var frameStartTime = DateTime.Now;
+            consoleInput.Update(); // постоянный запуск Update в consoleInput => ждёт нажатие клавиши
+            DateTime frameStartTime = DateTime.Now;
             
             float deltaTime = (float)(DateTime.Now - frameStartTime).TotalMilliseconds;
             gameLogic.Update(deltaTime);
             lastFrameTime = frameStartTime;
-            
         }
-        
     }
 }

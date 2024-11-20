@@ -1,0 +1,28 @@
+﻿@startuml
+class SnakeGameplayState
+{
+    - _bodyList : List<Cell> new()
+    - _currentDir : SnakeDir
+    - _timeToMove : float
+    --
+    + Update(float deltaTime)
+    + Reset()
+    + SetDirection(SnakeDir dir) => _currentDir = dir
+    - ShiftTo(Cell from, SnakeDir direction) : Cell
+    
+}
+
+note left of SnakeGameplayState::Update
+Логика передвижения
+end note
+note left of SnakeGameplayState::Reset
+_bodyList.Clear();
+_currentDir = SnakeDir.Right;
+_bodyList.Add(Cell.Zero);
+_timeToMove = 0; 
+end note
+note left of SnakeGameplayState::ShiftTo
+Логика следующей ячейки вызывется в Update
+end note
+
+@enduml

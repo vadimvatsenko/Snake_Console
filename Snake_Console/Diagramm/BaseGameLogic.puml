@@ -1,0 +1,19 @@
+﻿@startuml
+abstract class BaseGameLogic
+{
+    + InitializeInput(ConsoleInput input): void
+    --
+    + {abstract} Update(float deltaTime): void
+    --
+    + {abstract} OnArrowUp(): void
+    + {abstract} OnArrowDown(): void
+    + {abstract} OnArrowLeft(): void
+    + {abstract} OnArrowRight(): void
+}
+
+note left of BaseGameLogic::InitializeInput
+input.Subscribe(this);
+регистрация подписчика 
+на IArrowListener
+end note
+@enduml

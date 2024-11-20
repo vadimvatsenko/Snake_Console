@@ -1,0 +1,35 @@
+﻿@startuml
+
+left to right direction
+
+!include IArrowListener.puml
+!include SnakeDir.puml
+!include Cell.puml
+!include ConsoleInput.puml
+!include BaseGameLogic.puml
+!include BaseGameState.puml
+!include SnakeGameLogic.puml
+!include SnakeGameplayState.puml
+!include Program.puml
+
+BaseGameLogic -[#green]-> IArrowListener
+BaseGameLogic::Init -[#blue]-> ConsoleInput::Subs
+SnakeGameLogic -[#green]-> BaseGameLogic
+
+SnakeGameLogic::OnArrowUp -[#blue]-> SnakeGameplayState::SetD
+SnakeGameLogic::Down -[#blue]-> SnakeGameplayState::SetD
+SnakeGameLogic::Left -[#blue]-> SnakeGameplayState::SetD
+SnakeGameLogic::Right -[#blue]-> SnakeGameplayState::SetD
+
+SnakeGameLogic::OnArrowUp -[#blue]-> SnakeDir::Up
+SnakeGameLogic::Down -[#blue]-> SnakeDir::Down
+SnakeGameLogic::Left -[#blue]-> SnakeDir::Left
+SnakeGameLogic::Right -[#blue]-> SnakeDir::Right
+
+SnakeGameplayState -[#green]-> BaseGameState
+
+Program::gameLogic -[#blue]-> BaseGameLogic::InitializeInput
+Program::gameLogic -[#blue]-> SnakeGameLogic::Goto: после установки времени
+
+
+@enduml
