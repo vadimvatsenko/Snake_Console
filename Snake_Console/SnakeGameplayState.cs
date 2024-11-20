@@ -17,6 +17,7 @@ public class SnakeGameplayState: BaseGameState
 
         // Перемещение головы змейки
         Cell head = _bodyList[0];
+
         Cell nextCell = ShiftTo(head, _currentDir);
 
         // Перемещение тела змейки
