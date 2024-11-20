@@ -3,7 +3,7 @@ class SnakeGameplayState
 {
     - _bodyList : List<Cell> new()
     - _currentDir : SnakeDir
-    - _timeToMove : float
+    - _timeToMove : float 0
     --
     + Update(float deltaTime)
     + Reset()
