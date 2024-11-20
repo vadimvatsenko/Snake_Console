@@ -42,6 +42,11 @@ public class SnakeGameplayState: BaseGameState
         _timeToMove = 0; 
     }
 
+    public override void Draw(ConsoleRenderer consoleRenderer)
+    {
+        throw new NotImplementedException();
+    }
+
     public void SetDirection(SnakeDir dir) => _currentDir = dir;
     
     private Cell ShiftTo(Cell from, SnakeDir direction)
