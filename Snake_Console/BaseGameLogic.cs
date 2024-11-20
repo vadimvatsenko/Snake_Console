@@ -2,10 +2,10 @@
 
 public abstract class BaseGameLogic: IArrowListener
 {
-    private BaseGameState _currentState; // 2
+    protected BaseGameState _currentState; // 2
     private float _time; // 4 - внутриигровое время
-    private int _screenWidth; // 5 - ширина экрана
-    private int _screenHeight; // 6 - высота экрана
+    protected int _screenWidth; // 5 - ширина экрана
+    protected int _screenHeight; // 6 - высота экрана
     public void InitializeInput(ConsoleInput input)
     {
         input.Subscribe(this);
