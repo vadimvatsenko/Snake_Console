@@ -16,7 +16,7 @@ class Program
             consoleInput.Update(); // постоянный запуск Update в consoleInput => ждёт нажатие клавиши
             DateTime frameStartTime = DateTime.Now;
             
-            float deltaTime = (float)(DateTime.Now - frameStartTime).TotalMilliseconds;
+            float deltaTime = (float)(frameStartTime - lastFrameTime).TotalSeconds;
             gameLogic.Update(deltaTime);
             lastFrameTime = frameStartTime;
         }

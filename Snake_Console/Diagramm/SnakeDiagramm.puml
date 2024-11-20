@@ -13,7 +13,7 @@ left to right direction
 !include Program.puml
 
 BaseGameLogic -[#green]-> IArrowListener
-BaseGameLogic::Init -[#blue]-> ConsoleInput::Subs
+BaseGameLogic::InitializeInput -[#blue]-> ConsoleInput::Subs
 SnakeGameLogic -[#green]-> BaseGameLogic
 
 SnakeGameLogic::OnArrowUp -[#blue]-> SnakeGameplayState::SetD

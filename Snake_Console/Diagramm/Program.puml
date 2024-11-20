@@ -8,13 +8,14 @@ class Program
     - consoleInput : ConsoleInput new()
     - lastFrameTime : DateTime.Now
     --
-    - while (true)
-      - consoleInput.Update()
-      - frameStartTime : DateTime.Now
-      - deltaTime : float 
-      - gameLogic.Update(deltaTime)
-      - lastFrameTime = frameStartTime;     
-    endwhile
-    
+    - while (true)    
 }
+
+note left of Program::while
+consoleInput.Update();
+DateTime frameStartTime = DateTime.Now;            
+float deltaTime = (float)(frameStartTime - lastFrameTime).TotalSeconds;
+gameLogic.Update(deltaTime);
+lastFrameTime = frameStartTime;
+end note
 @enduml

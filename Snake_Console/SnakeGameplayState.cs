@@ -5,7 +5,7 @@ public class SnakeGameplayState: BaseGameState
     //HomeWork-14
     private List<Cell> _bodyList = new List<Cell>();
     private SnakeDir _currentDir;
-    private float _timeToMove;
+    private float _timeToMove = 0;
     
     public override void Update(float deltaTime)
     {
