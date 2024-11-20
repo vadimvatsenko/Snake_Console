@@ -21,6 +21,7 @@ public class SnakeGameplayState: BaseGameState
 
         //3. Перемещение головы змейки. head — это текущая позиция головы змейки (первый элемент в списке _bodyList).
         Cell head = _bodyList[0];
+
         //4. Вычисляем следующие положение змейки
         Cell nextCell = ShiftTo(head, _currentDir);
 
