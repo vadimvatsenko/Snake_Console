@@ -28,7 +28,7 @@ public class SnakeGameplayState: BaseGameState
         //5. Перемещение тела змейки.
         // Последняя клетка змейки (хвост) удаляется из списка с помощью RemoveAt(_bodyList.Count - 1)
         _bodyList.RemoveAt(_bodyList.Count - 1);
-        // На её место вставляется новая клетка (новая позиция головы), чтобы "переместить" змейку.
+        // На её место вставляется новая клетка (новая позиция головы), чтобы "переместить" змейку.,
         _bodyList.Insert(0, nextCell);
 
         Console.WriteLine($"Snake coord X = {_bodyList[0].X}, Y = {_bodyList[0].Y}");
