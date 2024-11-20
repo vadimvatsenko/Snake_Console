@@ -12,24 +12,26 @@ left to right direction
 !include SnakeGameplayState.puml
 !include Program.puml
 
-BaseGameLogic -[#green]-> IArrowListener
-BaseGameLogic::InitializeInput -[#blue]-> ConsoleInput::Subs
-SnakeGameLogic -[#green]-> BaseGameLogic
+BaseGameLogic -[#green,thickness=5]-> IArrowListener
+BaseGameLogic::InitializeInput -[#blue,thickness=2]-> ConsoleInput::Subs
+SnakeGameLogic -[#green,thickness=5]-> BaseGameLogic
 
-SnakeGameLogic::OnArrowUp -[#blue]-> SnakeGameplayState::SetD
-SnakeGameLogic::Down -[#blue]-> SnakeGameplayState::SetD
-SnakeGameLogic::Left -[#blue]-> SnakeGameplayState::SetD
-SnakeGameLogic::Right -[#blue]-> SnakeGameplayState::SetD
+SnakeGameLogic::OnArrowUp -[#blue,thickness=2]-> SnakeGameplayState::SetD
+SnakeGameLogic::Down -[#blue,thickness=2]-> SnakeGameplayState::SetD
+SnakeGameLogic::Left -[#blue,thickness=2]-> SnakeGameplayState::SetD
+SnakeGameLogic::Right -[#blue,thickness=2]-> SnakeGameplayState::SetD
 
-SnakeGameLogic::OnArrowUp -[#blue]-> SnakeDir::Up
-SnakeGameLogic::Down -[#blue]-> SnakeDir::Down
-SnakeGameLogic::Left -[#blue]-> SnakeDir::Left
-SnakeGameLogic::Right -[#blue]-> SnakeDir::Right
+SnakeGameLogic::OnArrowUp -[#blue,thickness=2]-> SnakeDir::Up
+SnakeGameLogic::Down -[#blue,thickness=2]-> SnakeDir::Down
+SnakeGameLogic::Left -[#blue,thickness=2]-> SnakeDir::Left
+SnakeGameLogic::Right -[#blue,thickness=2]-> SnakeDir::Right
 
-SnakeGameplayState -[#green]-> BaseGameState
+SnakeGameplayState -[#green,thickness=5]-> BaseGameState
 
-Program::gameLogic -[#blue]-> BaseGameLogic::InitializeInput
-Program::gameLogic -[#blue]-> SnakeGameLogic::Goto: после установки времени
+Program::gameLogic -[#blue,thickness=2]-> BaseGameLogic::InitializeInput
+Program::gameLogic -[#blue,thickness=2]-> SnakeGameLogic::Goto: после установки времени
+Program::while -[#blue,thickness=2]-> SnakeGameLogic::Update
+SnakeGameLogic::Update -[#blue,thickness=3]-> SnakeGameplayState::Update
 
 
 @enduml
