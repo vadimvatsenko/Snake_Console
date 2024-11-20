@@ -13,7 +13,13 @@ class SnakeGameplayState
 }
 
 note left of SnakeGameplayState::Update
-Логика передвижения
+        _timeToMove -= deltaTime;
+        if (_timeToMove > 0) return;
+        _timeToMove = 1f / 1f;
+        Cell head = _bodyList[0];
+        Cell nextCell = ShiftTo(head, _currentDir);
+        _bodyList.RemoveAt(_bodyList.Count - 1);
+        _bodyList.Insert(0, nextCell);
 end note
 note left of SnakeGameplayState::Reset
 _bodyList.Clear();
