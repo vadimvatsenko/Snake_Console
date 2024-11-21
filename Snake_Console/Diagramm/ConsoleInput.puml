@@ -2,31 +2,31 @@
 
 class ConsoleInput
 {
-    - _arrowListeners : HashSet<IArrowListener>
+    - _arrowListeners : <color:indigo><b>HashSet<IArrowListener> <color:green>new
     --
-    + Subscribe(IArrowListener listener) : void
+    + Subscribe<color:indigo>(<color:indigo><b>IArrowListener <color:black>listener)
     --
-    + Update(): void 
+    + Update()
     
     
     
 }
 
 note left of ConsoleInput::Subscribe
-_arrowListeners.Add(listener)  
-добавляем подписчиков в список 
+<b>_arrowListeners.Add(listener)  
+<color:green>добавляем подписчиков в список 
 end note
 
 note right of ConsoleInput::Update
 метод который будет считывать ввод с консоли
-while (Console.KeyAvailable) 
+<b>while (Console.KeyAvailable) 
 { 
-  ConsoleKeyInfo key = Console.ReadKey();
-  switch (key.Key) 
-    case ConsoleKey.UpArrow or ConsoleKey.W: \n
-      foreach (var sub in _arrowListeners) sub.OnArrowUp(); \n
-      break; 
-    - по четырём сторонам
+  <b>ConsoleKeyInfo key = Console.ReadKey();
+  <b>switch (key.Key) 
+    <b>case ConsoleKey.UpArrow or ConsoleKey.W: 
+      <b>foreach (var sub in _arrowListeners) sub.OnArrowUp(); 
+      <b>break; 
+    <color:green>- по четырём сторонам
 }
 end note
 @enduml

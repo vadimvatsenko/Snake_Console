@@ -2,15 +2,18 @@
 
 left to right direction
 
+
+!include BaseGameLogic.puml
+!include SnakeGameLogic.puml
 !include IArrowListener.puml
 !include SnakeDir.puml
-!include Cell.puml
 !include ConsoleInput.puml
-!include BaseGameLogic.puml
+!include Cell.puml
 !include BaseGameState.puml
-!include SnakeGameLogic.puml
 !include SnakeGameplayState.puml
 !include Program.puml
+
+
 
 BaseGameLogic -[#green,thickness=5]-> IArrowListener
 BaseGameLogic::InitializeInput -[#blue,thickness=2]-> ConsoleInput::Subs

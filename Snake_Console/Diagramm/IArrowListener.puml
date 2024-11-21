@@ -1,10 +1,10 @@
 ﻿@startuml
 interface IArrowListener
 {
-    + OnArrowUp(): void
-    + OnArrowDown(): void
-    + OnArrowLeft(): void
-    + OnArrowRight(): void
+    + OnArrowUp()
+    + OnArrowDown()
+    + OnArrowLeft()
+    + OnArrowRight()
 }
 
 

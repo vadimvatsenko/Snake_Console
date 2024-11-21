@@ -55,8 +55,8 @@ public class SnakeGameplayState: BaseGameState
     public override void Reset() // 19
     {
         _bodyList.Clear();
-        int middleX = _fieldWidth / 2; // 20
-        int middleY = _fieldHeight / 2; // 21
+        int middleX = FieldWidth / 2; // 20
+        int middleY = FieldHeight / 2; // 21s
         
         _currentDir = SnakeDir.Right;
         _bodyList.Add(new Cell(middleX, middleY)); // 22 были нулевые координаты

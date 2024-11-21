@@ -1,19 +1,48 @@
 ﻿@startuml
 abstract class BaseGameLogic
 {
-    + InitializeInput(ConsoleInput input): void
+    # _currentState : BaseGameState? <b>get, -set +
+    # _time : float <b>get, -set +
+    # _screenWidth : int <b>get, -set +
+    # _screenHeight : int <b>get, -set +     
     --
-    + {abstract} Update(float deltaTime): void
+    + InitializeInput<b>(ConsoleInput input): void
+    --
+    + {abstract} Update<b>(float deltaTime): void
     --
     + {abstract} OnArrowUp(): void
     + {abstract} OnArrowDown(): void
     + {abstract} OnArrowLeft(): void
     + {abstract} OnArrowRight(): void
+    --
+    + {abstract} CreatePallet() : <b>ConsoleColor[] +
+    --
+    + ChangeState<b>(BaseGameState state) +
+    + DrawNewState<b>(float deltaTime, ConsoleRenderer renderer) +
+    
 }
 
 note left of BaseGameLogic::InitializeInput
-input.Subscribe(this);
-регистрация подписчика 
-на IArrowListener
+<b>input.Subscribe(this);
+<color:green>регистрация подписчика 
+<color:green>на IArrowListener
+end note
+
+note left of BaseGameLogic::ChangeState
+<b>_currentState?.Reset(); 
+<color:green>делаем сброс - обязательная проверка на null - _currentState?
+<b>_currentState = state; 
+<color:green>затем запись нового состояния
+end note
+
+note left of BaseGameLogic::DrawNewState
+<b>_time += deltaTime;
+<b>_screenWidth = renderer.width;
+<b>_screenHeight = renderer.height;
+<b>_currentState?.Update(deltaTime); 
+<color:green>обязательная проверка на null - _currentState?
+<b>_currentState?.Draw(renderer); 
+<color:green>обязательная проверка на null - _currentState?
+<b>this.Update(deltaTime);
 end note
 @enduml

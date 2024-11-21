@@ -1,8 +1,9 @@
 ﻿@startuml
 abstract class BaseGameState
 {
-    + {abstract} Update(float deltaTime)
+    + {abstract} Update<b>(<color:indigo>float <color:black>deltaTime)
     + {abstract} Reset()
+    + {abstract} Draw<b>(<color:indigo>ConsoleRenderer <color:black>consoleRenderer) +
 }
 
 @enduml

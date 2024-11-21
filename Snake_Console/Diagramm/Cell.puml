@@ -1,16 +1,16 @@
 ﻿@startuml
 struct Cell
 {
-    + X : int
-    + Y : int
+    + X : <color:indigo><b>int
+    + Y : <color:indigo><b>intint
     --
-    + {static} Zero : Cell
-    + {static} Up : Cell
-    + {static} Down : Cell
-    + {static} Right : Cell
-    + {static} Left : Cell
+    + {static} Zero : <color:indigo><b>Cell
+    + {static} Up : <color:indigo><b>Cell
+    + {static} Down : <color:indigo><b>Cell
+    + {static} Right : <color:indigo><b>Cell
+    + {static} Left : <color:indigo><b>Cell
     --
-    + constructor : Cell(int x, int y)
-    + {static} operator : static Cell +(Cell, Cell)
+    + constructor : <color:indigo><b>Cell(int <color:black>x, <color:indigo><b>int <color:black><b>y)
+    + {static} operator : <color:indigo><b>Cell +(Cell, Cell)
 }
 @enduml
