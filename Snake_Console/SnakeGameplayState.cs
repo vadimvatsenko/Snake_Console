@@ -2,13 +2,15 @@
 
 public class SnakeGameplayState: BaseGameState
 {
-    //HomeWork-14
+    
     private List<Cell> _bodyList = new List<Cell>();
     private SnakeDir _currentDir;
     private float _timeToMove = 0;
     private int _fieldWidth; // 13 - ширина поля
     private int _fieldHeight; // 14 - высота поля
-    private const char SNAKE_SYMBOL = '\u25a0'; // 23 - добавлен символ змейки
+    private const char SnakeSymbol = '■'; // 23 - добавлен символ змейки
+    
+    //private SnakeGameLogic? _snakeGameLogic ; // 25
 
     public int FieldWidth // 15 
     {
@@ -47,7 +49,7 @@ public class SnakeGameplayState: BaseGameState
         // На её место вставляется новая клетка (новая позиция головы), чтобы "переместить" змейку.,
         _bodyList.Insert(0, nextCell);
 
-        Console.WriteLine($"Snake coord X = {_bodyList[0].X}, Y = {_bodyList[0].Y}");
+        //Console.WriteLine($"Snake coord X = {_bodyList[0].X}, Y = {_bodyList[0].Y}"); // 25 - коментируем
     }
 
     public override void Reset() // 19
@@ -63,9 +65,13 @@ public class SnakeGameplayState: BaseGameState
 
     public override void Draw(ConsoleRenderer consoleRenderer) // 18 
     {
-        for (int el = 0; el < _bodyList.Count; el++)
+        //Random random = new Random(); // 26
+        //int randomColorIndex = random.Next(0, _snakeGameLogic.CreatePallet().Length); // 27
+
+        foreach (var cell in _bodyList)
         {
-            consoleRenderer.SetPixel(_bodyList[el].X, _bodyList[el].Y, SNAKE_SYMBOL, _bodyList[el].Color);
+            consoleRenderer.SetPixel(cell.X, cell.Y, SnakeSymbol, 3);
+            Console.WriteLine(cell.ToString());
         }
     }
 
