@@ -16,7 +16,10 @@ public class SnakeGameLogic: BaseGameLogic
                 ConsoleColor.DarkBlue, 
                 ConsoleColor.DarkGreen, 
                 ConsoleColor.DarkCyan, 
-                ConsoleColor.DarkRed 
+                ConsoleColor.DarkRed,
+                ConsoleColor.DarkYellow,
+                ConsoleColor.DarkMagenta,
+                ConsoleColor.Magenta,
             };
     }
 

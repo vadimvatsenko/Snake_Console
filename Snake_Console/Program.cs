@@ -13,8 +13,7 @@ class Program
         
         ConsoleInput consoleInput = new ConsoleInput();
         gameLogic.InitializeInput(consoleInput);
-
-
+        
         ConsoleRenderer prevRenderer = renderer0; // 31
         ConsoleRenderer currentRenderer = renderer1; // 32
         

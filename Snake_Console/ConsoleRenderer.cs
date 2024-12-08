@@ -91,7 +91,7 @@ public class ConsoleRenderer
         for (int i = 0; i < text.Length; i++)
         {
             _pixels[atWidth + i, atHeight] = text[i]; // заполняет каждый символ текста в нужную ячейку
-            _pixelColors[atWidth + i, atHeight] = (byte)colorIdx; // заполняем каждую ячейку цветом
+            _pixelColors[atWidth + i, atHeight] = (byte)colorIdx; // заполняем каждую ячейку цветом по горизоньали
         }
     }
 

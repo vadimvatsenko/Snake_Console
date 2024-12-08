@@ -2,20 +2,48 @@
 
 class Program
 {
-    + static void Main(string[] args) 
+    - {const} targetFrameTime : float = 1f/60f +
     --
-    - gameLogic :  SnakeGameLogic new()
-    - consoleInput : ConsoleInput new()
-    - lastFrameTime : DateTime.Now
+    --{static} void Main(string[] args)-- 
+    --
+    - gameLogic :  <color:indigo><b>SnakeGameLogic new()
+    - paletette : <color:indigo><b>ConsoleColor[] <color:black> = gameLogic.<color:green>CreatePallet() +
+    - renderer0 : new <color:indigo><b> ConsoleRenderer(<color:black>pallette) +
+    - renderer1 : new <color:indigo><b> ConsoleRenderer(<color:black>pallette) +
+    -- 
+    - consoleInput : <color:indigo><b>ConsoleInput new()
+    - gameLogic.<color:indigo><b>InitializeInput(<color:black>consoleInput);
+    --
+    - prevRenderer : <color:indigo><b> ConsoleRenderer <color:black>= renderer0 +
+    - currentRenderer : <color:indigo><b> ConsoleRenderer <color:black>= renderer0 +
+    --
+    - lastFrameTime = <color:indigo><b>DateTime.Now
     --
     - while (true)    
 }
 
 note left of Program::while
-consoleInput.Update();
-DateTime frameStartTime = DateTime.Now;            
-float deltaTime = (float)(frameStartTime - lastFrameTime).TotalSeconds;
-gameLogic.Update(deltaTime);
-lastFrameTime = frameStartTime;
+<b>DateTime frameStartTime = DateTime.Now
+<b>consoleInput.Update() +
+             
+<b>float deltaTime = (float)(frameStartTime - lastFrameTime).TotalSeconds
+<s>gameLogic.Update(deltaTime);          
+<b>consoleInput.Update() +
+
+<b>gameLogic.DrawNewState(deltaTime, currentRenderer) +
+<b>lastFrameTime = frameStartTime
+             
+<b>if(!currentRenderer.Equals(prevRenderer)) currentRenderer.Render() +
+ 
+<b>ConsoleRenderer tmp = prevRenderer +
+<b>currentRenderer.Clear() +
+             
+<b>DateTime nextFrameTime = frameStartTime + TimeSpan.FromSeconds(targetFrameTime); +
+<b>DateTime endFrameTime = DateTime.Now +
+  
+<b>if (nextFrameTime > endFrameTime) +
+{
+   <b>Thread.Sleep((int)(nextFrameTime - endFrameTime).TotalMilliseconds); +
+}
 end note
 @enduml

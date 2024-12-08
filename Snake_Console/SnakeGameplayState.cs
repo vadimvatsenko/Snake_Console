@@ -67,10 +67,10 @@ public class SnakeGameplayState: BaseGameState
     {
         //Random random = new Random(); // 26
         //int randomColorIndex = random.Next(0, _snakeGameLogic.CreatePallet().Length); // 27
-
+        
         foreach (var cell in _bodyList)
         {
-            consoleRenderer.SetPixel(cell.X, cell.Y, SnakeSymbol, 3);
+            consoleRenderer.SetPixel(cell.X, cell.Y, SnakeSymbol, 6);
             Console.WriteLine(cell.ToString());
         }
     }
