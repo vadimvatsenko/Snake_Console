@@ -23,7 +23,7 @@ class Program
         while (true)
         {
             DateTime frameStartTime = DateTime.Now;
-            consoleInput.Update(); // постоянный запуск Update в consoleInput => ждёт нажатие клавиши
+            consoleInput.Update(); // постоянный запуск Update в consoleInput => ждёт нажатие клавиши ////
             
             float deltaTime = (float)(frameStartTime - lastFrameTime).TotalSeconds;
             //gameLogic.Update(deltaTime); // 34
