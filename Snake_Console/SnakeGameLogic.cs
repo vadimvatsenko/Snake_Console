@@ -3,10 +3,14 @@
 public class SnakeGameLogic: BaseGameLogic
 {
     private SnakeGameplayState _gameplayState = new SnakeGameplayState();
+    private ShowTextState _showTextState; // 20
+    private bool _newGamePending = false; // 16
+    private int _currentLevel; // 17
 
     // тут удалили _gameplayState.Update(deltaTime) и добавили другую логику
     public override void Update(float deltaTime) 
     {
+        if(CurrentState != null && !CurrentState.IsDone()) return; // 15
         if(CurrentState != _gameplayState) GotoGamePlay();
     } 
     public override ConsoleColor[] CreatePallet() // возврат массива цветов

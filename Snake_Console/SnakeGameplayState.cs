@@ -66,7 +66,7 @@ public class SnakeGameplayState: BaseGameState
             return;
         }
 
-        if (nextCell.x < 0 || nextCell.y < 0 || nextCell.x >= FieldWidth || nextCell.y >= FieldHeight)
+        if (nextCell.x < 0 || nextCell.y < 0 || nextCell.x >= FieldWidth || nextCell.y >= FieldHeight) // 14
         {
             gameOver = true;
             return;
