@@ -83,16 +83,12 @@ public class SnakeGameplayState: BaseGameState
         {
             case SnakeDir.Right:
                 return from + Cell.Right;
-            break;
             case SnakeDir.Left:
                 return from + Cell.Left;
-            break;
             case SnakeDir.Down:
                 return from + Cell.Down;
-            break;
             case SnakeDir.Up:
                 return from + Cell.Up;
-            break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(direction), direction, null);
         }

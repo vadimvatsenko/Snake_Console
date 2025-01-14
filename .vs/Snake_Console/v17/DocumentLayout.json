@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Snake_Console\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|p:\\projects\\visual studio apps\\snake_console\\snake_console\\basegamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|solutionrelative:snake_console\\basegamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|p:\\projects\\visual studio apps\\snake_console\\snake_console\\snakegameplaystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|solutionrelative:snake_console\\snakegameplaystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|p:\\projects\\visual studio apps\\snake_console\\snake_console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|solutionrelative:snake_console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,6 +27,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "BaseGameLogic.cs",
+              "DocumentMoniker": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\BaseGameLogic.cs",
+              "RelativeDocumentMoniker": "Snake_Console\\BaseGameLogic.cs",
+              "ToolTip": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\BaseGameLogic.cs",
+              "RelativeToolTip": "Snake_Console\\BaseGameLogic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:21:50.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SnakeGameplayState.cs",
+              "DocumentMoniker": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\SnakeGameplayState.cs",
+              "RelativeDocumentMoniker": "Snake_Console\\SnakeGameplayState.cs",
+              "ToolTip": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\SnakeGameplayState.cs",
+              "RelativeToolTip": "Snake_Console\\SnakeGameplayState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:18:16.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\Program.cs",
               "RelativeDocumentMoniker": "Snake_Console\\Program.cs",
@@ -26,7 +60,7 @@
               "RelativeToolTip": "Snake_Console\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-21T14:34:38.786Z",
+              "WhenOpened": "2025-01-14T13:17:38.855Z",
               "EditorCaption": ""
             }
           ]
