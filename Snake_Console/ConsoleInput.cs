@@ -5,19 +5,17 @@ public class ConsoleInput
     // уникальная коллекция подписчиков
     private readonly HashSet<IArrowListener> _arrowListeners = new();
     
-
     // добавление подписчиков в коллекцию
     public void Subscribe(IArrowListener listener)
     {
         _arrowListeners.Add(listener);
     }
 
-    public void Update() // метод который будет считывать ввод с консоли
+    public void Update() // метод, который будет считывать ввод с консоли
     {
         while (Console.KeyAvailable) // цикл происходит пока нажата, хоть какая нибудь клавиша
         {
-            ConsoleKeyInfo key = Console.ReadKey();
-
+            ConsoleKeyInfo key = Console.ReadKey(intercept: true); 
             
             // Перебирает всех подписчиков в _arrowListeners и вызывает соответствующий метод
             switch (key.Key)

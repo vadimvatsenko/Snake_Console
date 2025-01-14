@@ -1,0 +1,21 @@
+﻿@startuml
+
+class Program
+{
+    + static void Main(string[] args) 
+    --
+    - gameLogic :  SnakeGameLogic new()
+    - consoleInput : ConsoleInput new()
+    - lastFrameTime : DateTime.Now
+    --
+    - while (true)    
+}
+
+note left of Program::while
+consoleInput.Update();
+DateTime frameStartTime = DateTime.Now;            
+float deltaTime = (float)(frameStartTime - lastFrameTime).TotalSeconds;
+gameLogic.Update(deltaTime);
+lastFrameTime = frameStartTime;
+end note
+@enduml

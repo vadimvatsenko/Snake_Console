@@ -1,0 +1,16 @@
+﻿@startuml
+struct Cell
+{
+    + X : int
+    + Y : int
+    --
+    + {static} Zero : Cell
+    + {static} Up : Cell
+    + {static} Down : Cell
+    + {static} Right : Cell
+    + {static} Left : Cell
+    --
+    + constructor : Cell(int x, int y)
+    + {static} operator : static Cell +(Cell, Cell)
+}
+@enduml

@@ -1,0 +1,11 @@
+﻿@startuml
+
+enum SnakeDir
+{    
+    Up
+    Down
+    Left
+    Right       
+} 
+
+@enduml

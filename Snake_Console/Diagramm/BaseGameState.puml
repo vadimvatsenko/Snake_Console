@@ -1,0 +1,8 @@
+﻿@startuml
+abstract class BaseGameState
+{
+    + {abstract} Update(float deltaTime)
+    + {abstract} Reset()
+}
+
+@enduml

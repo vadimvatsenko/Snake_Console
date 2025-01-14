@@ -1,0 +1,16 @@
+﻿@startuml
+
+class SnakeGameLogic
+{
+    - _gameplayState : SnakeGameplayState new()
+    --
+    + GotoGamePlay(): void _gameplayState.Reset()
+    + Update(float deltaTime) => _gameplayState.Update(deltaTime)
+    + OnArrowUp()
+    + OnArrowDown()
+    + OnArrowLeft()
+    + OnArrowRight()
+        
+}
+
+@enduml

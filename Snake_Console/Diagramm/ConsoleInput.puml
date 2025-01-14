@@ -1,0 +1,32 @@
+﻿@startuml
+
+class ConsoleInput
+{
+    - _arrowListeners : HashSet<IArrowListener>
+    --
+    + Subscribe(IArrowListener listener) : void
+    --
+    + Update(): void 
+    
+    
+    
+}
+
+note left of ConsoleInput::Subscribe
+_arrowListeners.Add(listener)  
+добавляем подписчиков в список 
+end note
+
+note right of ConsoleInput::Update
+метод который будет считывать ввод с консоли
+while (Console.KeyAvailable) 
+{ 
+  ConsoleKeyInfo key = Console.ReadKey();
+  switch (key.Key) 
+    case ConsoleKey.UpArrow or ConsoleKey.W: \n
+      foreach (var sub in _arrowListeners) sub.OnArrowUp(); \n
+      break; 
+    - по четырём сторонам
+}
+end note
+@enduml
