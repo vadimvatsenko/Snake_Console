@@ -5,6 +5,8 @@ class Program
     const float targetFrameTime = 1f / 60f; // 40 - фреймтайм 60 кадров в секунду
     static void Main(string[] args)
     {
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        
         SnakeGameLogic gameLogic = new SnakeGameLogic();
         ConsoleColor[] pallette = gameLogic.CreatePallet(); // 28 - палитра
         
