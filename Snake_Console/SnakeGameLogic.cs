@@ -4,12 +4,12 @@ public class SnakeGameLogic: BaseGameLogic
 {
     private SnakeGameplayState _gameplayState = new SnakeGameplayState();
 
-    // 18 тут удалили _gameplayState.Update(deltaTime) и добавили другую логику
+    // тут удалили _gameplayState.Update(deltaTime) и добавили другую логику
     public override void Update(float deltaTime) 
     {
         if(CurrentState != _gameplayState) GotoGamePlay();
     } 
-    public override ConsoleColor[] CreatePallet() // 8 - возврат массива цветов
+    public override ConsoleColor[] CreatePallet() // возврат массива цветов
     {
         return new ConsoleColor[] 
             {   
@@ -31,26 +31,26 @@ public class SnakeGameLogic: BaseGameLogic
         _gameplayState.Reset();
 
     }
-    public override void OnArrowUp() // 9 
+    public override void OnArrowUp()  
     {
         // проверка на если currentState не является gameplayState
         if(CurrentState != _gameplayState) return; 
         _gameplayState.SetDirection(SnakeDir.Up);
     }
 
-    public override void OnArrowDown() // 10
+    public override void OnArrowDown() 
     {
         if(CurrentState != _gameplayState) return;
         _gameplayState.SetDirection(SnakeDir.Down);
     }
 
-    public override void OnArrowLeft() // 11
+    public override void OnArrowLeft() 
     {
         if(CurrentState != _gameplayState) return;
         _gameplayState.SetDirection(SnakeDir.Left);
     }
 
-    public override void OnArrowRight() // 12
+    public override void OnArrowRight() 
     {
         if(CurrentState != _gameplayState) return;
         _gameplayState.SetDirection(SnakeDir.Right);

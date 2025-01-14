@@ -2,25 +2,25 @@
 
 class Program
 {
-    const float targetFrameTime = 1f / 60f; // 40 - фреймтайм 60 кадров в секунду
+    const float targetFrameTime = 1f / 60f; // фреймтайм 60 кадров в секунду
     static void Main(string[] args)
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         
         SnakeGameLogic gameLogic = new SnakeGameLogic();
-        ConsoleColor[] pallette = gameLogic.CreatePallet(); // 28 - палитра
+        ConsoleColor[] pallette = gameLogic.CreatePallet(); // палитра
         
-        ConsoleRenderer renderer0 = new ConsoleRenderer(pallette); // 29
-        ConsoleRenderer renderer1 = new ConsoleRenderer(pallette); // 30
+        ConsoleRenderer renderer0 = new ConsoleRenderer(pallette); 
+        ConsoleRenderer renderer1 = new ConsoleRenderer(pallette); 
         
         ConsoleInput consoleInput = new ConsoleInput();
         gameLogic.InitializeInput(consoleInput);
         
-        ConsoleRenderer prevRenderer = renderer0; // 31
-        ConsoleRenderer currentRenderer = renderer1; // 32
+        ConsoleRenderer prevRenderer = renderer0; 
+        ConsoleRenderer currentRenderer = renderer1; 
         
         DateTime lastFrameTime = DateTime.Now;
-        //gameLogic.GotoGamePlay(); // сброс в первоначальное состояние // 33
+        //gameLogic.GotoGamePlay(); // сброс в первоначальное состояние 
 
         while (true)
         {
@@ -28,30 +28,30 @@ class Program
             //consoleInput.Update(); // постоянный запуск Update в consoleInput => ждёт нажатие клавиши
 
             float deltaTime = (float)(frameStartTime - lastFrameTime).TotalSeconds;
-            //gameLogic.Update(deltaTime); // 34
-            consoleInput.Update(); // 35
+            //gameLogic.Update(deltaTime); 
+            consoleInput.Update(); 
 
-            gameLogic.DrawNewState(deltaTime, currentRenderer); // 36
+            gameLogic.DrawNewState(deltaTime, currentRenderer); 
             lastFrameTime = frameStartTime;
 
-            if (!currentRenderer.Equals(prevRenderer)) currentRenderer.Render(); // 37
+            if (!currentRenderer.Equals(prevRenderer)) currentRenderer.Render(); 
 
-            ConsoleRenderer tmp = prevRenderer; // 38
-            prevRenderer = currentRenderer; // 38 - 1
-            currentRenderer = tmp; // 38 - 2
-            currentRenderer.Clear(); // 39
+            ConsoleRenderer tmp = prevRenderer; 
+            prevRenderer = currentRenderer; 
+            currentRenderer = tmp; 
+            currentRenderer.Clear(); 
 
             // frameStartTime - исходную точку, от которой будет рассчитываться время следующего кадра
             // TimeSpan.FromSeconds(targetFrameTime) - временной интервал (TimeSpan), который равен количеству секунд, указанному в targetFrameTime
             // frameStartTime + TimeSpan - момент времени, когда следует завершить обработку текущего кадра.
             // nextFrameTime - это расчетное время окончания текущего кадра или начала следующего.
-            DateTime nextFrameTime = frameStartTime + TimeSpan.FromSeconds(targetFrameTime); // 41 - TimeSpan.FromSeconds(targetFrameTime) = 0.16
+            DateTime nextFrameTime = frameStartTime + TimeSpan.FromSeconds(targetFrameTime); // TimeSpan.FromSeconds(targetFrameTime) = 0.16
 
-            DateTime endFrameTime = DateTime.Now; // 42 - Время, когда текущий кадр уже завершил обработку
+            DateTime endFrameTime = DateTime.Now; // Время, когда текущий кадр уже завершил обработку
 
             // nextFrameTime > endFrameTime - Проверяет, завершилась ли обработка текущего кадра раньше, чем нужно.
             // Thread.Sleep - делает паузу на оставшееся время, что время кадра было плавным
-            if (nextFrameTime > endFrameTime) // 43
+            if (nextFrameTime > endFrameTime) 
             {
                 Thread.Sleep((int)(nextFrameTime - endFrameTime).TotalMilliseconds);
             }

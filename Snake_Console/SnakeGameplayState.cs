@@ -3,23 +3,23 @@
 public class SnakeGameplayState: BaseGameState
 {
     
-    private const char SnakeSymbol = '■'; // 23 - добавлен символ змейки
-    private int _fieldWidth; // 13 - ширина поля
-    private int _fieldHeight; // 14 - высота поля
+    private const char SnakeSymbol = '\u25a0'; // добавлен символ змейки
+    private int _fieldWidth; // ширина поля
+    private int _fieldHeight; // высота поля
 
     private List<Cell> _bodyList = new List<Cell>();
     private SnakeDir _currentDir = SnakeDir.Right;
     private float _timeToMove = 0;
     
-    //private SnakeGameLogic? _snakeGameLogic ; // 25
+    //private SnakeGameLogic? _snakeGameLogic ; 
 
-    public int FieldWidth // 15 w
+    public int FieldWidth 
     {
         get => _fieldWidth;
         set => _fieldWidth = value;
     }
 
-    public int FieldHeight // 16
+    public int FieldHeight 
     {
         get => _fieldHeight;
         set => _fieldHeight = value;
@@ -27,11 +27,11 @@ public class SnakeGameplayState: BaseGameState
 
     public void SetDirection(SnakeDir dir) => _currentDir = dir;
 
-    public override void Reset() // 19
+    public override void Reset() 
     {
         _bodyList.Clear();
-        int middleX = FieldWidth / 2; // 20
-        int middleY = FieldHeight / 2; // 21s
+        int middleX = FieldWidth / 2; 
+        int middleY = FieldHeight / 2; 
 
         _currentDir = SnakeDir.Right;
         _bodyList.Add(new Cell(middleX, middleY)); // 22 были нулевые координаты
@@ -67,10 +67,10 @@ public class SnakeGameplayState: BaseGameState
 
     
 
-    public override void Draw(ConsoleRenderer consoleRenderer) // 18 
+    public override void Draw(ConsoleRenderer consoleRenderer)  
     {
-        //Random random = new Random(); // 26
-        //int randomColorIndex = random.Next(0, _snakeGameLogic.CreatePallet().Length); // 27
+        //Random random = new Random(); 
+        //int randomColorIndex = random.Next(0, _snakeGameLogic.CreatePallet().Length); 
         
         foreach (var cell in _bodyList)
         {
