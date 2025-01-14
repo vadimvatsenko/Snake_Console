@@ -17,6 +17,7 @@ public class SnakeGameplayState: BaseGameState
     
     private Random _random = new Random(); // 4
     private int _score = 0; // 7 - количество яблок
+    public bool gameOver; // 9
     
     //private SnakeGameLogic? _snakeGameLogic ; 
 
@@ -33,14 +34,19 @@ public class SnakeGameplayState: BaseGameState
     }
 
     public void SetDirection(SnakeDir dir) => _currentDir = dir;
-    
+
+    public override bool IsDone() // 10
+    {
+        return gameOver; // 11
+    }
+
     public override void Update(float deltaTime)
     {
         // Уменьшение таймера. Переменная _timeToMove отсчитывает время до следующего перемещения змейки.
         // В каждом вызове метода Update значение _timeToMove уменьшается на величину прошедшего времени (deltaTime).
         // Если _timeToMove всё ещё больше 0, метод завершает выполнение, чтобы не двигать змейку слишком часто.
         _timeToMove -= deltaTime;
-        if (_timeToMove > 0) return;
+        if (_timeToMove > 0 || gameOver) return; // 13
 
         
         // Установка скорости перемещения. 1 клетка в секунду. Например, 1/2 означает 2 клетки в секунду
@@ -57,6 +63,12 @@ public class SnakeGameplayState: BaseGameState
             _bodyList.Insert(0, _apple);
             _score++;
             GenerateApple();
+            return;
+        }
+
+        if (nextCell.x < 0 || nextCell.y < 0 || nextCell.x >= FieldWidth || nextCell.y >= FieldHeight)
+        {
+            gameOver = true;
             return;
         }
 
@@ -89,6 +101,7 @@ public class SnakeGameplayState: BaseGameState
     
     public override void Reset() 
     {
+        gameOver = false; // 12
         _bodyList.Clear();
         int middleX = FieldWidth / 2; 
         int middleY = FieldHeight / 2; 
