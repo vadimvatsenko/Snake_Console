@@ -15,7 +15,7 @@ public class ConsoleInput
     {
         while (Console.KeyAvailable) // цикл происходит пока нажата, хоть какая нибудь клавиша
         {
-            ConsoleKeyInfo key = Console.ReadKey();
+            ConsoleKeyInfo key = Console.ReadKey(intercept: true);
 
             
             // Перебирает всех подписчиков в _arrowListeners и вызывает соответствующий метод

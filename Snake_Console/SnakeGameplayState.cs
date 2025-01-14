@@ -12,7 +12,7 @@ public class SnakeGameplayState: BaseGameState
     
     //private SnakeGameLogic? _snakeGameLogic ; // 25
 
-    public int FieldWidth // 15 
+    public int FieldWidth // 15 w
     {
         get => _fieldWidth;
         set => _fieldWidth = value;
