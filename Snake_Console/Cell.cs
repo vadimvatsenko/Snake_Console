@@ -19,6 +19,7 @@ public struct Cell
 
     public static Cell operator +(Cell left, Cell right) => new(left.x + right.x, left.y + right.y);
     public static Cell operator -(Cell left, Cell right) => new(left.x - right.x, left.y - right.y);
+    public static Cell operator +(Cell left, int right) => new(left.x * right, left.y * right);
     
     public override bool Equals(object? obj)
     {
