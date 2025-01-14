@@ -3,12 +3,13 @@
 public class SnakeGameplayState: BaseGameState
 {
     
-    private List<Cell> _bodyList = new List<Cell>();
-    private SnakeDir _currentDir;
-    private float _timeToMove = 0;
+    private const char SnakeSymbol = '■'; // 23 - добавлен символ змейки
     private int _fieldWidth; // 13 - ширина поля
     private int _fieldHeight; // 14 - высота поля
-    private const char SnakeSymbol = '■'; // 23 - добавлен символ змейки
+
+    private List<Cell> _bodyList = new List<Cell>();
+    private SnakeDir _currentDir = SnakeDir.Right;
+    private float _timeToMove = 0;
     
     //private SnakeGameLogic? _snakeGameLogic ; // 25
 
@@ -23,8 +24,20 @@ public class SnakeGameplayState: BaseGameState
         get => _fieldHeight;
         set => _fieldHeight = value;
     }
-        
-    
+
+    public void SetDirection(SnakeDir dir) => _currentDir = dir;
+
+    public override void Reset() // 19
+    {
+        _bodyList.Clear();
+        int middleX = FieldWidth / 2; // 20
+        int middleY = FieldHeight / 2; // 21s
+
+        _currentDir = SnakeDir.Right;
+        _bodyList.Add(new Cell(middleX, middleY)); // 22 были нулевые координаты
+        _timeToMove = 0;
+    }
+
     public override void Update(float deltaTime)
     {
         // Уменьшение таймера. Переменная _timeToMove отсчитывает время до следующего перемещения змейки.
@@ -52,16 +65,7 @@ public class SnakeGameplayState: BaseGameState
         //Console.WriteLine($"Snake coord X = {_bodyList[0].X}, Y = {_bodyList[0].Y}"); // 25 - коментируем
     }
 
-    public override void Reset() // 19
-    {
-        _bodyList.Clear();
-        int middleX = FieldWidth / 2; // 20
-        int middleY = FieldHeight / 2; // 21s
-        
-        _currentDir = SnakeDir.Right;
-        _bodyList.Add(new Cell(middleX, middleY)); // 22 были нулевые координаты
-        _timeToMove = 0; 
-    }
+    
 
     public override void Draw(ConsoleRenderer consoleRenderer) // 18 
     {
@@ -70,13 +74,11 @@ public class SnakeGameplayState: BaseGameState
         
         foreach (var cell in _bodyList)
         {
-            consoleRenderer.SetPixel(cell.X, cell.Y, SnakeSymbol, 6);
-            Console.WriteLine(cell.ToString());
+            consoleRenderer.SetPixel(cell.x, cell.y, SnakeSymbol, 6);
+           
         }
     }
-
-    public void SetDirection(SnakeDir dir) => _currentDir = dir;
-    
+   
     private Cell ShiftTo(Cell from, SnakeDir direction)
     {
         switch (direction)

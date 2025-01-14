@@ -2,8 +2,8 @@
 
 public struct Cell
 {
-    public int X;
-    public int Y;
+    public int x;
+    public int y;
 
     public static Cell Zero => new Cell(0, 0);
     public static Cell Up => new Cell(0, -1);
@@ -13,21 +13,21 @@ public struct Cell
     
     public Cell(int x, int y)
     {
-        X = x;
-        Y = y;
+        this.x = x;
+        this.y = y;
     }
 
-    public static Cell operator +(Cell left, Cell right) => new(left.X + right.X, left.Y + right.Y);
-    public static Cell operator -(Cell left, Cell right) => new(left.X - right.X, left.Y - right.Y);
+    public static Cell operator +(Cell left, Cell right) => new(left.x + right.x, left.y + right.y);
+    public static Cell operator -(Cell left, Cell right) => new(left.x - right.x, left.y - right.y);
     
     public override bool Equals(object? obj)
     {
         if(obj is not Cell otherCell) return false;
-        return X == otherCell.X && Y == otherCell.Y;
+        return x == otherCell.x && y == otherCell.y;
     }
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(X, Y);
+        return HashCode.Combine(x, y);
     }
 }

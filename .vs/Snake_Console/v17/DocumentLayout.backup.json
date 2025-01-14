@@ -3,12 +3,44 @@
   "WorkspaceRootPath": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|p:\\projects\\visual studio apps\\snake_console\\snake_console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|solutionrelative:snake_console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|p:\\projects\\visual studio apps\\snake_console\\snake_console\\basegamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|solutionrelative:snake_console\\basegamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|p:\\projects\\visual studio apps\\snake_console\\snake_console\\snakegameplaystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|solutionrelative:snake_console\\snakegameplaystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|p:\\projects\\visual studio apps\\snake_console\\snake_console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|solutionrelative:snake_console\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|p:\\projects\\visual studio apps\\snake_console\\snake_console\\snakegamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|solutionrelative:snake_console\\snakegamelogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|p:\\projects\\visual studio apps\\snake_console\\snake_console\\consoleinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|solutionrelative:snake_console\\consoleinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|p:\\projects\\visual studio apps\\snake_console\\snake_console\\basegamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|solutionrelative:snake_console\\basegamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|p:\\projects\\visual studio apps\\snake_console\\snake_console\\snakedir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|solutionrelative:snake_console\\snakedir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|p:\\projects\\visual studio apps\\snake_console\\snake_console\\iarrowlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|solutionrelative:snake_console\\iarrowlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|p:\\projects\\visual studio apps\\snake_console\\snake_console\\consolerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|solutionrelative:snake_console\\consolerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|p:\\projects\\visual studio apps\\snake_console\\snake_console\\cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A26A0DD-C3ED-40BC-AB24-BD38D95B3248}|Snake_Console\\Snake_Console.csproj|solutionrelative:snake_console\\cell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +50,134 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "SnakeGameLogic.cs",
+              "DocumentMoniker": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\SnakeGameLogic.cs",
+              "RelativeDocumentMoniker": "Snake_Console\\SnakeGameLogic.cs",
+              "ToolTip": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\SnakeGameLogic.cs",
+              "RelativeToolTip": "Snake_Console\\SnakeGameLogic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:27:49.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SnakeDir.cs",
+              "DocumentMoniker": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\SnakeDir.cs",
+              "RelativeDocumentMoniker": "Snake_Console\\SnakeDir.cs",
+              "ToolTip": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\SnakeDir.cs",
+              "RelativeToolTip": "Snake_Console\\SnakeDir.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:27:47.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IArrowListener.cs",
+              "DocumentMoniker": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\IArrowListener.cs",
+              "RelativeDocumentMoniker": "Snake_Console\\IArrowListener.cs",
+              "ToolTip": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\IArrowListener.cs",
+              "RelativeToolTip": "Snake_Console\\IArrowListener.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:27:44.243Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ConsoleRenderer.cs",
+              "DocumentMoniker": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\ConsoleRenderer.cs",
+              "RelativeDocumentMoniker": "Snake_Console\\ConsoleRenderer.cs",
+              "ToolTip": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\ConsoleRenderer.cs",
+              "RelativeToolTip": "Snake_Console\\ConsoleRenderer.cs",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:27:38.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ConsoleInput.cs",
+              "DocumentMoniker": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\ConsoleInput.cs",
+              "RelativeDocumentMoniker": "Snake_Console\\ConsoleInput.cs",
+              "ToolTip": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\ConsoleInput.cs",
+              "RelativeToolTip": "Snake_Console\\ConsoleInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:27:34.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Cell.cs",
+              "DocumentMoniker": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\Cell.cs",
+              "RelativeDocumentMoniker": "Snake_Console\\Cell.cs",
+              "ToolTip": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\Cell.cs",
+              "RelativeToolTip": "Snake_Console\\Cell.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:26:10.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BaseGameState.cs",
+              "DocumentMoniker": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\BaseGameState.cs",
+              "RelativeDocumentMoniker": "Snake_Console\\BaseGameState.cs",
+              "ToolTip": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\BaseGameState.cs",
+              "RelativeToolTip": "Snake_Console\\BaseGameState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:24:40.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BaseGameLogic.cs",
+              "DocumentMoniker": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\BaseGameLogic.cs",
+              "RelativeDocumentMoniker": "Snake_Console\\BaseGameLogic.cs",
+              "ToolTip": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\BaseGameLogic.cs",
+              "RelativeToolTip": "Snake_Console\\BaseGameLogic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-14T13:21:50.416Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SnakeGameplayState.cs",
               "DocumentMoniker": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\SnakeGameplayState.cs",
               "RelativeDocumentMoniker": "Snake_Console\\SnakeGameplayState.cs",
               "ToolTip": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\SnakeGameplayState.cs",
               "RelativeToolTip": "Snake_Console\\SnakeGameplayState.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAwFcAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-14T13:18:16.037Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\Program.cs",
               "RelativeDocumentMoniker": "Snake_Console\\Program.cs",
               "ToolTip": "P:\\Projects\\Visual Studio Apps\\Snake_Console\\Snake_Console\\Program.cs",
               "RelativeToolTip": "Snake_Console\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwCgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-14T13:17:38.855Z",
               "EditorCaption": ""
