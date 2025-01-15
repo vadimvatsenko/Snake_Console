@@ -2,10 +2,9 @@
 
 public class ConsoleInput
 {
-    // уникальная коллекция подписчиков
+   
     private readonly HashSet<IArrowListener> _arrowListeners = new();
     
-    // добавление подписчиков в коллекцию
     public void Subscribe(IArrowListener listener)
     {
         _arrowListeners.Add(listener);

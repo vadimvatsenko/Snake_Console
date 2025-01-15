@@ -5,22 +5,20 @@ namespace Snake_Console;
 public class SnakeGameplayState: BaseGameState
 {
     
-    private const char SnakeSymbol = '\u25a0'; // добавлен символ змейки
-    private const char AppleSymbol = '\u25c9'; // 1
-    private int _fieldWidth; // ширина поля
-    private int _fieldHeight; // высота поля
+    private const char SnakeSymbol = '\u25a0'; 
+    private const char AppleSymbol = '\u25c9'; 
+    private int _fieldWidth; 
+    private int _fieldHeight; 
 
     private List<Cell> _bodyList = new List<Cell>();
-    private Cell _apple = new Cell(); // 2
+    private Cell _apple = new Cell(); 
     private SnakeDir _currentDir = SnakeDir.Right;
     private float _timeToMove = 0;
     
-    private Random _random = new Random(); // 4
-    private int _score = 0; // 7 - количество яблок
-    public bool gameOver; // 9
+    private Random _random = new Random(); 
+    private int _score = 0; 
+    public bool gameOver { get; private set; } 
     
-    //private SnakeGameLogic? _snakeGameLogic ; 
-
     public int FieldWidth 
     {
         get => _fieldWidth;
@@ -35,9 +33,9 @@ public class SnakeGameplayState: BaseGameState
 
     public void SetDirection(SnakeDir dir) => _currentDir = dir;
 
-    public override bool IsDone() // 10
+    public override bool IsDone() 
     {
-        return gameOver; // 11
+        return gameOver;
     }
 
     public override void Update(float deltaTime)
@@ -107,7 +105,7 @@ public class SnakeGameplayState: BaseGameState
         int middleY = FieldHeight / 2; 
 
         _currentDir = SnakeDir.Right;
-        _bodyList.Add(new Cell(middleX, middleY)); // были нулевые координаты
+        _bodyList.Add(new Cell(middleX, middleY)); 
         _timeToMove = 0;
         _apple = new Cell(middleX + 3, middleY + 3);
     }
@@ -116,7 +114,7 @@ public class SnakeGameplayState: BaseGameState
     {
         Cell cell = new Cell(_random.Next(FieldWidth), _random.Next(FieldHeight));
 
-        if (_bodyList[0].Equals(cell))
+        if (_bodyList[0].Equals(cell)) // логика, которая предотвращает генерацию яблока на голове змейки
         {
             if (cell.y > FieldHeight)
             {

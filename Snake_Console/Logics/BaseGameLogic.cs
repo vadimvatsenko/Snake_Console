@@ -4,15 +4,15 @@ public abstract class BaseGameLogic: IArrowListener
 {
     protected BaseGameState? CurrentState { get; private set; } 
     protected float Time { get; private set; }  // внутриигровое время
-    protected int ScreenWidth { get; private set; }  // ширина экрана
-    protected int ScreenHeight { get; private set; }  // высота экрана    
+    protected int ScreenWidth { get; private set; }  
+    protected int ScreenHeight { get; private set; }  
        
     public abstract void Update(float deltaTime);
     public abstract void OnArrowUp();
     public abstract void OnArrowDown();
     public abstract void OnArrowLeft();
     public abstract void OnArrowRight();
-    public abstract ConsoleColor[] CreatePallet(); // метод возвращает массив цветов
+    public abstract ConsoleColor[] CreatePallet(); 
     
     public void InitializeInput(ConsoleInput input)
     {

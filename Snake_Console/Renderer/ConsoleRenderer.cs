@@ -2,7 +2,7 @@
 using System;
 
 // класс, предназначен для отрисовки графики
-public class ConsoleRenderer
+public class ConsoleRenderer : IRenderer
 {
     public int width { get; private set; } // ширина консольного окна
     public int height { get; private set; } // высота консольного окна
@@ -18,7 +18,7 @@ public class ConsoleRenderer
     private readonly int _maxHeight; // Максимальная высота консольного окна, которые могут быть использованы для отрисовки.
 
 
-    // Индексатор  Позволяет получить или установить символ для конкретной координаты пикселя (w, h), используя синтаксис renderer[w, h]
+    // Индексатор  позволяет получить или установить символ для конкретной координаты пикселя (w, h), используя синтаксис renderer[w, h]
     public char this[int w, int h]
     {
         get { return _pixels[w, h]; }
@@ -91,7 +91,7 @@ public class ConsoleRenderer
         for (int i = 0; i < text.Length; i++)
         {
             _pixels[atWidth + i, atHeight] = text[i]; // заполняет каждый символ текста в нужную ячейку
-            _pixelColors[atWidth + i, atHeight] = (byte)colorIdx; // заполняем каждую ячейку цветом по горизоньали
+            _pixelColors[atWidth + i, atHeight] = (byte)colorIdx; // заполняем каждую ячейку цветом по горизонтали
         }
     }
 
