@@ -5,10 +5,11 @@ public class SnakeGameLogic: BaseGameLogic
     private SnakeGameplayState _gameplayState = new SnakeGameplayState();
     private bool _newGamePending = false; 
     private int _currentLevel = 0; 
-    private ShowTextState _showTextState = new ShowTextState(10f); 
+    private ShowTextState _showTextState = new ShowTextState(2f); 
     
     public void GotoGamePlay() 
     {
+        _gameplayState.Level = _currentLevel;
         _gameplayState.FieldHeight = this.ScreenHeight;
         _gameplayState.FieldWidth = this.ScreenWidth;
         ChangeState(_gameplayState);
@@ -18,8 +19,17 @@ public class SnakeGameLogic: BaseGameLogic
     public void GotoGameOver()
     {
         _currentLevel = 0;
+        _gameplayState.Score = 0;
         _newGamePending = true;
         _showTextState.Text = "Game Over";
+        ChangeState(_showTextState);
+    }
+
+    public void GotoNextLevel()
+    {
+        _currentLevel++;
+        _newGamePending = false;
+        _showTextState.Text = $"Level {_currentLevel}";
         ChangeState(_showTextState);
     }
     
@@ -50,11 +60,19 @@ public class SnakeGameLogic: BaseGameLogic
     
     public override void Update(float deltaTime) 
     {
-        if(CurrentState != null && !CurrentState.IsDone()) return; 
+        if(CurrentState != null && !CurrentState.IsDone()) return;
 
-        if (CurrentState == _gameplayState && _gameplayState.gameOver)
+        if ((CurrentState == null || CurrentState == _gameplayState) && !_gameplayState.gameOver)
+        {
+            GotoNextLevel();
+        }
+        else if (CurrentState == _gameplayState && _gameplayState.gameOver)
         {
             GotoGameOver();
+        }
+        else if (CurrentState != _gameplayState && _newGamePending)
+        {
+            GotoNextLevel();
         }
         else if(CurrentState != _gameplayState && !_newGamePending)
         {

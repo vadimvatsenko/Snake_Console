@@ -4,6 +4,9 @@ namespace Snake_Console;
 
 public class SnakeGameplayState: BaseGameState
 {
+    private Random _random = new Random(); 
+    
+    private const int _maxCountApples = 3;
     
     private const char SnakeSymbol = '\u25a0'; 
     private const char AppleSymbol = '\u25c9'; 
@@ -15,9 +18,10 @@ public class SnakeGameplayState: BaseGameState
     private SnakeDir _currentDir = SnakeDir.Right;
     private float _timeToMove = 0;
     
-    private Random _random = new Random(); 
-    private int _score = 0; 
+    private int _score = 0;
+    private int _level;
     public bool gameOver { get; private set; } 
+    public bool hasWon { get; private set; } = false;
     
     public int FieldWidth 
     {
@@ -31,11 +35,23 @@ public class SnakeGameplayState: BaseGameState
         set => _fieldHeight = value;
     }
 
+    public int Level
+    {
+        get => _level;
+        set => _level = value;
+    }
+
+    public int Score
+    {
+        get => _score;
+        set => _score = value;
+    }
+
     public void SetDirection(SnakeDir dir) => _currentDir = dir;
 
     public override bool IsDone() 
     {
-        return gameOver;
+        return gameOver || hasWon;
     }
 
     public override void Update(float deltaTime)
@@ -44,27 +60,29 @@ public class SnakeGameplayState: BaseGameState
         // В каждом вызове метода Update значение _timeToMove уменьшается на величину прошедшего времени (deltaTime).
         // Если _timeToMove всё ещё больше 0, метод завершает выполнение, чтобы не двигать змейку слишком часто.
         _timeToMove -= deltaTime;
-        if (_timeToMove > 0 || gameOver) return; // 13
+        if (_timeToMove > 0 || gameOver) return; 
 
         
+        
         // Установка скорости перемещения. 1 клетка в секунду. Например, 1/2 означает 2 клетки в секунду
-        _timeToMove = 1f / 1f;
+        _timeToMove = 1f / (_maxCountApples + Level); // будет ускорение каждый уровень
 
         // Перемещение головы змейки. head — это текущая позиция головы змейки (первый элемент в списке _bodyList).
         Cell head = _bodyList[0];
 
         // Вычисляем следующие положение змейки
         Cell nextCell = ShiftTo(head, _currentDir);
-
-        if (nextCell.Equals(_apple)) // 6 - реализация роста змейки
+        
+        if (nextCell.Equals(_apple)) // реализация роста змейки
         {
             _bodyList.Insert(0, _apple);
             _score++;
+            hasWon = _bodyList.Count >= _maxCountApples + Level;
             GenerateApple();
             return;
         }
 
-        if (nextCell.x < 0 || nextCell.y < 0 || nextCell.x >= FieldWidth || nextCell.y >= FieldHeight) // 14
+        if (nextCell.x < 0 || nextCell.y < 0 || nextCell.x >= FieldWidth || nextCell.y >= FieldHeight) 
         {
             gameOver = true;
             return;
@@ -75,18 +93,15 @@ public class SnakeGameplayState: BaseGameState
         _bodyList.RemoveAt(_bodyList.Count - 1);
         // На её место вставляется новая клетка (новая позиция головы), чтобы "переместить" змейку.,
         _bodyList.Insert(0, nextCell);
-
-        //Console.WriteLine($"Snake coord X = {_bodyList[0].X}, Y = {_bodyList[0].Y}"); // коментируем
+        
     }
 
     
 
     public override void Draw(ConsoleRenderer consoleRenderer)  
     {
-        //Random random = new Random(); 
-        //int randomColorIndex = random.Next(0, _snakeGameLogic.CreatePallet().Length); 
         
-        consoleRenderer.SetPixel(_apple.x, _apple.y, AppleSymbol, 1); // 3
+        consoleRenderer.SetPixel(_apple.x, _apple.y, AppleSymbol, 1); 
         
         foreach (var cell in _bodyList)
         {
@@ -99,7 +114,8 @@ public class SnakeGameplayState: BaseGameState
     
     public override void Reset() 
     {
-        gameOver = false; // 12
+        gameOver = false;
+        hasWon = false;
         _bodyList.Clear();
         int middleX = FieldWidth / 2; 
         int middleY = FieldHeight / 2; 
@@ -110,7 +126,7 @@ public class SnakeGameplayState: BaseGameState
         _apple = new Cell(middleX + 3, middleY + 3);
     }
 
-    private void GenerateApple() // 5 
+    private void GenerateApple() 
     {
         Cell cell = new Cell(_random.Next(FieldWidth), _random.Next(FieldHeight));
 
